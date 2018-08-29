@@ -1,0 +1,30 @@
+import pepita.*
+
+describe "Test de Pepita" {
+
+	test "Testeo valor inicial de pepita" {
+		assert.equals(100, pepita.energia())
+	}
+
+	test "testeo que pepita vuela 0 kms" {
+		pepita.volar(0)
+		assert.equals(90, pepita.energia())
+	}
+
+	test "testeo pepita que come 0 gr" {
+		pepita.comer(0)
+		assert.equals(100, pepita.energia())
+	}
+	
+	//La metodologia TDD me indica que primero prepare los casos de prueba y luego con la ayuda (Ctrl + 1)
+	// Ahí tendré la opción para que me genere los methods (Vacios) necesarios.
+	test "testeo que pepita juega" {
+		pepita.juga()
+		assert.that(pepita.esFeliz())
+	}
+	
+	test "testeo que pepita no empieza feliz"{
+		assert.notThat(pepita.esFeliz())
+	}
+}
+
